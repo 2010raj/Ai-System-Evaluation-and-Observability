@@ -259,24 +259,23 @@ A useful reliability principle across all three systems is:
 - `01-policy-pipeline/tests.txt`
 - `01-policy-pipeline/mypy.txt`
 - `01-policy-pipeline/ruff.txt`
-- `01-policy-pipeline/routing-fallback.txt`
-- `01-policy-pipeline/calibration.txt`
-- `01-policy-pipeline/perturbation.txt`
+- `01-policy-pipeline/pipeline-run.txt`
+- `01-policy-pipeline/routing_decisions.json`
+- `01-policy-pipeline/calibration-report.txt`
 - `environment.txt`
 
 ### System 2
 - `02-mortgage-extraction/tests.txt`
 - `02-mortgage-extraction/mypy.txt`
 - `02-mortgage-extraction/ruff.txt`
-- `02-mortgage-extraction/appraisal-informal-sqft.txt`
+- `02-mortgage-extraction/extract-run.txt`
 - `02-mortgage-extraction/income-missing-bonus.txt`
-- `02-mortgage-extraction/income-sum-mismatch.txt`
-- `02-mortgage-extraction/perturbation.txt`
+- `02-mortgage-extraction/discrepancy-run.txt`
 
 ### System 3
 - `03-supply-chain/tests.txt`
 - `03-supply-chain/mypy.txt`
 - `03-supply-chain/ruff.txt`
-- `03-supply-chain/baseline-briefing.txt`
-- `03-supply-chain/timeout-briefing.txt`
+- `03-supply-chain/briefing.txt`
+- `03-supply-chain/timeout-run.txt`
 - `03-supply-chain/perturbation.txt`
