@@ -1,0 +1,28 @@
+System 3 — Supply Chain Multi-Source Synthesis Perturbation
+
+Baseline:
+Command:
+.venv/bin/supply-chain-investigate meridian --offline
+
+Observed baseline:
+- Briefing completed successfully.
+- Well-Established section included corroborated and single-source findings.
+- on_time_delivery_rate was Contested because supplier_audit reported 95.0% (2026-04-10) while logistics reported 78.0% (2026-04-05).
+- production_capacity_utilization was Incomplete because no source reported the metric.
+
+Perturbation:
+Command:
+.venv/bin/supply-chain-investigate meridian --offline --simulate-timeout
+
+Deliberate change/configuration:
+- Simulated a timeout while reading the logistics source.
+
+Observed result:
+- The coordinator completed instead of failing.
+- logistics was reported as unavailable because of a timeout.
+- late_shipment_count was classified as Incomplete with "timeout reading logistics".
+- The logistics 78.0% on-time delivery value was unavailable, so on_time_delivery_rate was no longer Contested and the available supplier_audit value of 95.0% remained.
+- production_capacity_utilization remained Incomplete because no source reported it.
+
+Reliability observation:
+The perturbation demonstrates that the coordinator degrades explicitly when a source becomes unavailable instead of silently treating missing information as confirmed evidence.
